@@ -5,10 +5,13 @@ import { X } from 'lucide-react'
 import styled from 'styled-components'
 import { Button } from '@/components'
 import CartBody from './CartBody'
+import CartFooter from './CartFooter'
+import { useShowCart } from '@/shared/useShowCart'
 
 const Cart = () => {
+  const { showCart } = useShowCart()
   return (
-    <Container>
+    <Container style={{ display: showCart ? 'flex' : 'none' }}>
       <CartHeader>
         <StyledH1>Carrinho de compras</StyledH1>
         <Button variant='justIcon'>
@@ -16,13 +19,13 @@ const Cart = () => {
         </Button>
       </CartHeader>
       <CartBody />
+      <CartFooter />
     </Container>
   )
 }
 export default Cart
 
 const Container = styled.div`
-  display: none;
   box-shadow: -5px 0 6px 0 rgba(0, 0, 0, 0.13);
   background: ${(props) => props.theme.colors.primary};
   position: absolute;
@@ -30,9 +33,7 @@ const Container = styled.div`
   right: 0;
   min-height: 100%;
   width: 486px;
-  padding: 36px 47px;
-
-  // display: flex;
+  padding-top: 36px;
   flex-direction: column;
 `
 
@@ -41,6 +42,7 @@ const CartHeader = styled.div`
   align-items: center;
   justify-content: space-between;
   margin-bottom: 64px;
+  padding: 0 47px;
 `
 
 const StyledH1 = styled.h1`

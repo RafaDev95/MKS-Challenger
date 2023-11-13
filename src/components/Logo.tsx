@@ -12,13 +12,13 @@ const Logo = () => {
 export default Logo
 
 const StyledH1 = styled.h1`
-  color: ${(props) => props.theme.colors.white};
+  color: white;
   font-size: 40px;
   font-weight: 600;
 `
 
 const StyledSpan = styled.span`
-  color: ${(props) => props.theme.colors.white};
+  color: white;
   font-size: 20px;
   font-weight: 300;
 `

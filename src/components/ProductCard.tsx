@@ -5,11 +5,14 @@ import Image from 'next/image'
 
 import styled from 'styled-components'
 import { Button } from '@/components'
+import { useCartStore } from '@/shared/useCartStore'
 
 const ProductCard = () => {
+  const { addItem } = useCartStore()
+
   return (
     <Container>
-      <StyledNextImage src='/test.png' width={111} height={138} alt='something' />
+      <Image src='/test.png' width={111} height={138} alt='something' />
       <InfoWrapper>
         <StyledDiv>
           <ProductTitle>Apple Watch Series 4 GPS</ProductTitle>
@@ -17,7 +20,19 @@ const ProductCard = () => {
         </StyledDiv>
         <ProductDescription>Redesigned from scratch and completely revised</ProductDescription>
       </InfoWrapper>
-      <Button variant='productCard'>
+      <Button
+        variant='productCard'
+        onClick={() =>
+          addItem({
+            brand: 'Tiringad',
+            description: 'Desripxion',
+            id: 4,
+            name: 'Vampire Survivors',
+            price: 200,
+            quantity: 4,
+          })
+        }
+      >
         <ShoppingBag />
         Comprar
       </Button>
@@ -31,7 +46,7 @@ const Container = styled.div`
   height: 285px;
   padding-top: 14px;
   border-radius: ${(props) => props.theme.borderRadius.md};
-  background: ${(props) => props.theme.colors.white};
+  background: white;
   box-shadow: 0px 20px 8px 0px rgba(0, 0, 0, 0.14);
 
   display: flex;
@@ -39,7 +54,6 @@ const Container = styled.div`
   align-items: center;
   gap: 14px 0;
 `
-const StyledNextImage = styled(Image)``
 
 const InfoWrapper = styled.div`
   padding: 0 14px;

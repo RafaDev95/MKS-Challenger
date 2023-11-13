@@ -4,6 +4,7 @@ const theme = {
     darkerPrimary: '#063f96',
     black: '#2C2C2C',
     darkGray: '#373737',
+    lightGray: '#bfbfbf',
   },
   borderRadius: {
     sm: '5px',

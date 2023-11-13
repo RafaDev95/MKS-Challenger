@@ -3,8 +3,10 @@
 import styled, { css } from 'styled-components'
 
 type ButtonProps = {
-  variant?: 'productCard' | 'justIcon'
+  variant?: 'productCard' | 'justIcon' | 'callToAction'
 }
+
+const Test = () => {}
 
 const Button = styled.button<ButtonProps>`
   border-radius: ${(props) => props.theme.borderRadius.md};
@@ -32,7 +34,7 @@ const Button = styled.button<ButtonProps>`
       width: 100%;
       background: ${(props) => props.theme.colors.primary};
       color: #fff;
-      padding: 8px 0;
+      padding: 4px 0;
       border-radius: 0 0 8px 8px;
       text-transform: uppercase;
       font-size: 14px;
@@ -41,6 +43,9 @@ const Button = styled.button<ButtonProps>`
       &:hover {
         background: ${(props) => props.theme.colors.darkerPrimary};
         transform: scale(1);
+      }
+      &:active {
+        transform: scale(0.95);
       }
     `}
 
@@ -54,6 +59,24 @@ const Button = styled.button<ButtonProps>`
       width: inherit;
       height: inherit;
 
+      &:hover {
+        background: ${(props) => props.theme.colors.darkGray};
+        transform: scale(1);
+      }
+
+      &:active {
+        transform: scale(0.95);
+      }
+    `}
+      
+      ${(props) =>
+    props.variant === 'callToAction' &&
+    css`
+      background: black;
+      color: #fff;
+      border-radius: 0;
+      width: 100%;
+      height: 97px;
       &:hover {
         background: ${(props) => props.theme.colors.darkGray};
         transform: scale(1);

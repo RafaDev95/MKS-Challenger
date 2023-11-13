@@ -18,6 +18,11 @@ export default function StyledComponentsRegistry({ children }: { children: React
   if (typeof window !== 'undefined') return <>{children}</>
 
   return (
-    <StyleSheetManager sheet={styledComponentsStyleSheet.instance}>{children}</StyleSheetManager>
+    <StyleSheetManager
+      shouldForwardProp={(prop: any) => prop !== 'variant'}
+      sheet={styledComponentsStyleSheet.instance}
+    >
+      {children}
+    </StyleSheetManager>
   )
 }

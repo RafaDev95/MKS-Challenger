@@ -6,6 +6,7 @@ interface Theme {
     darkerPrimary: string
     black: string
     darkGray: string
+    lightGray: string
   }
   borderRadius: {
     sm: string
