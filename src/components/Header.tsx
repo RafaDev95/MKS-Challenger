@@ -1,6 +1,6 @@
 'use client'
 
-import { Logo, CartButton } from './'
+import { Logo, CartButton } from '.'
 import styled from 'styled-components'
 
 const Header = () => {
@@ -28,4 +28,8 @@ const Nav = styled.nav`
   display: flex;
   align-items: center;
   justify-content: space-between;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
 `

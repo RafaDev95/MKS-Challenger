@@ -2,7 +2,6 @@
 
 import Image from 'next/image'
 import styled from 'styled-components'
-import { ShoppingCart } from 'lucide-react'
 
 const CartButton = () => {
   return (
@@ -26,6 +25,7 @@ const StyledButton = styled.button`
   outline: none;
   cursor: pointer;
   transition: all ease 0.2s;
+
   &:hover {
     transform: scale(1.05);
   }
