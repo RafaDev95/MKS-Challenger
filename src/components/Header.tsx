@@ -21,6 +21,10 @@ const CustomHeader = styled.header`
   display: flex;
   align-items: center;
   padding: 0 65px;
+
+  @media (max-width: 768px) {
+    height: 130px;
+  }
 `
 
 const Nav = styled.nav`
@@ -31,5 +35,6 @@ const Nav = styled.nav`
 
   @media (max-width: 768px) {
     flex-direction: column;
+    gap: 10px 0;
   }
 `

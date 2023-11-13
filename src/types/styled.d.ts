@@ -3,8 +3,13 @@ import 'styled-components'
 interface Theme {
   colors: {
     primary: string
-    white: string
+    darkerPrimary: string
     black: string
+    darkGray: string
+  }
+  borderRadius: {
+    sm: string
+    md: string
   }
 }
 

@@ -1,9 +1,11 @@
-import { Header } from '../components'
+import { Cart, Header, Products } from '@/components'
 
 export default function Home() {
   return (
-    <main>
+    <main style={{ position: 'relative', minHeight: '100vh' }}>
       <Header />
+      <Products />
+      <Cart />
     </main>
   )
 }
